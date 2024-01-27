@@ -4,7 +4,7 @@ import FCM from "fcm-node";
 import cors from "cors";
 
 const app = express();
-
+const PORT = process.env.PORT || 3030;
 app.use(cors());
 const serverKey =
   "AAAAipvA_Yk:APA91bGsAR5Y-DXF30IHOzLUx70JNyy72xlJrRkXnYoLn_AjePeMoHO7mJ26yO6PndQYzNxhpR_dfoowqOoK__bY77jBasy3i-7ZIrOHO4mcHWBPXDuTcRzgdyKxMdBSCw1jcsqiJ-UX";
@@ -42,8 +42,9 @@ app.post("/sendNotification", (req, res) => {
   });
 });
 app.post("/", (req, res) => {
-res.status(200)});
-const PORT = 3000;
-app.listen(PORT, () => {
+  res.status(200);
+});
+// const PORT = 3000;
+app.listen(3000, () => {
   console.log(`Server is running on port ${PORT}`);
 });
