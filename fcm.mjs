@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 app.post("/sendNotification", (req, res) => {
   // Extract data from the request body
   // res.status(200).json({ success: true });
-  console.log("j");
-  const { deviceToken, notificationTitle, notificationBody } = req.body;
 
+  const { deviceToken, notificationTitle, notificationBody } = req.body;
+  console.log(deviceToken);
   const message = {
     to: deviceToken,
     notification: {
