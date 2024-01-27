@@ -24,6 +24,7 @@ app.post("/sendNotification", (req, res) => {
     notification: {
       title: notificationTitle,
       body: notificationBody,
+      priority:'high'
     },
     data: {
       title: "ok cdfsdsdfsd",
