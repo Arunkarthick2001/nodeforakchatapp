@@ -17,7 +17,13 @@ app.post("/sendNotification", (req, res) => {
   // Extract data from the request body
   // res.status(200).json({ success: true });
 
-  const { deviceToken, notificationTitle, notificationBody } = req.body;
+  const {
+    deviceToken,
+    notificationTitle,
+    notificationBody,
+    currentUid,
+    guestId,
+  } = req.body;
   console.log(deviceToken);
   const message = {
     to: deviceToken,
@@ -26,8 +32,8 @@ app.post("/sendNotification", (req, res) => {
       body: notificationBody,
     },
     data: {
-      title: "ok cdfsdsdfsd",
-      body: '{"name": "okg ooggle ogrlrl", "product_id": "123", "final_price": "0.00035"}',
+      title: "Msg Notif",
+      body: { guestId: currentUid, currentUid: guestId, screen: "ChatScreen" },
     },
   };
 
