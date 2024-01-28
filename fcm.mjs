@@ -18,7 +18,7 @@ app.post("/sendNotification", (req, res) => {
   // res.status(200).json({ success: true });
 
   const {
-    deviceToken,
+    guestDeviceToken,
     notificationTitle,
     notificationBody,
     currentUid,
@@ -26,11 +26,11 @@ app.post("/sendNotification", (req, res) => {
   } = req.body;
   console.log(deviceToken);
   const message = {
-    to: deviceToken,
+    to: guestDeviceToken,
     notification: {
       title: notificationTitle,
       body: notificationBody,
-      priority:'high'
+      priority: "high",
     },
     data: {
       title: "Msg Notif",
